@@ -2,7 +2,7 @@
 
 console.log("hello world");
 
-// 2. Variable(변수) : 변경될 수 있는 값
+// 2. Variable(변수) : 변경될 수 있는 값, rw (read/ write)
 // let (added in ES6)
 // Mutable data type : 값을 변경 가능
 
@@ -32,19 +32,23 @@ console.log(age); // --> 4
 lastName = Sue;
 console.log(age); // --> Error : Uncaught ReferenceError 'Cannot access 'name before initialization'
 
-// 3. Constants
+// 3. Constant, r(read)
 // Immutable data type : 값을 변경할 수 없음
+
+const daysInWeek = 7;
+const maxNumber = 5;
+
+//Note!
+//Immutable data types : primitive types, frozen objects (i.e. object.freeze())
+//Mutable data types : all objects by default are mutable in JS
 // favor immutable data type always for a few reasons:
 // - security
 // - thread savety
 // - reduce human mistakes
 
-const daysInWeek = 7;
-const maxNumber = 5;
-
 // 4. Variable data Types
 // Primitive, single item : number, string, boolean, null, undefined, symbol
-// object, box container
+// object, box container : object는 obj가 가르키는 ref가 값에 저장되는거라 에있는 value는 const여도 변경 가능
 // function, first-class function
 
 const count = 17; // integer
@@ -127,5 +131,6 @@ console.log(`value: ${text}. type: ${typeof text}`); // --> number
 
 
 // object 
+// 오브젝트 안에 있는 요소들은 변경 가능
 const obj = {flavor : 'chocolate', cost  :29}
 obj.cost = 40;
